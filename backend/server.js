@@ -25,10 +25,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/users", UserRoutes);
 
 if (process.env.NODE_ENV === "production") {
-  console.log(process.env.NODE_ENV);
+  // console.log(process.env.NODE_ENV);
   const __dirname = path.resolve();
 
-  console.log(path.join(__dirname, "/frontend/dist"));
+  // console.log(path.join(__dirname, "/frontend/dist"));
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
 
   app.get("*", (req, res) =>
